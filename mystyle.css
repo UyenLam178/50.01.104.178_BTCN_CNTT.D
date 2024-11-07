@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  #content {
+    width: 100vw; /* Kích thước màn hình (khung hình) */
+    height: 100vh; /* Chiều cao màn hình */
+    position: relative;
+    border: none;
+    overflow: hidden; /* Ẩn mọi phần tử ra ngoài khung hình */
+}
+body {
+    background-image: url('Png/BG.jpg'); /* Đường dẫn tương đối đến hình ảnh trong thư mục images */
+    background-size: cover; /* Đảm bảo hình ảnh phủ đầy toàn bộ màn hình */
+    background-position: center; /* Căn giữa hình ảnh */
+    background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    #Ca1{
+        right:300px; top: 250px; position: absolute;
+        animation: dichuyenqualai1 10s ease-in-out infinite;
+}
+    #Ca2{
+        top:50%; left:50%; position:absolute;
+        animation: dichuyenqualai2 8s ease-in-out infinite;
+}
+    #Ca4{
+        top: 10%; left:20%; position: absolute;
+        animation: lan 9s ease-in-out infinite;
+}
+    #Ca5{
+        top:10%; right: 30%; position:absolute;
+        animation: swim 7s ease-in-out infinite;
+    }
+    #Ca6{
+        top: 20%; left: 20%; position: absolute;
+        animation: swim1 10s ease-in-out infinite;
+    }
+    #Ca3{
+        right: 30%; bottom: 10%; position: absolute;
+        animation: boi 7s ease-in-out infinite;
+    }
+@keyframes dichuyenqualai1 {
+    0% {
+        left: 0;
+        top: 60%; 
+        transform: rotateY(0deg);
+    }
+    50% {
+        left: 60%;
+        top: 30%; 
+        transform: rotateY(0deg);
+    }
+    50.01% {
+        transform: rotateY(180deg);
+        left: 60%;
+        top: 30%;
+    }
+    75%{
+        left:30%;
+        top: 30%;
+        transform: translateX(-50%) translateY(50%) rotateY(180deg);
+    }
+    100%{
+        left:0;
+        top:60%;
+        transform: translateX(-90%) rotateY(180deg);
+    }
+}
+@keyframes dichuyenqualai2 {
+    0% {
+        top: 0;
+        left: 0;
+        transform: translateX(0) translateY(0) scaleX(1) rotateX(30deg); /* Vị trí ban đầu */
+    }
+    33.33% { 
+        top: 100px; /* Di chuyển đến đỉnh tam giác (điểm thứ hai) */
+        left: 800px; /* Di chuyển đến điểm thứ hai theo chiều ngang */
+        transform: translateX(50%) translateY(50%) rotateY(0deg); /* Căn giữa phần tử */
+    }
+    66.66% {
+        top: 0; /* Di chuyển về điểm ban đầu theo chiều dọc */
+        left: 800px; /* Di chuyển đến điểm cuối của tam giác (điểm thứ ba) */
+        transform: translateX(50%) translateY(50%) rotateY(180deg); /* Căn giữa và lật ngang */
+    }
+    100% {
+        top: 0; /* Quay lại vị trí gốc */
+        left: 0; /* Quay lại vị trí gốc */
+        transform: scaleX(1) rotateY(0deg); /* Quay lại vị trí ban đầu và không lật */
+    }
+}
+@keyframes boi {
+    0% {
+        top: 0; left: 0;
+        transform: translateX(0) scaleX(1);  /* Bắt đầu tại vị trí ban đầu và không lật */
+    }
+    25% {
+        transform: translateX(200px) scaleX(1);  /* Di chuyển sang phải 300px mà không lật */
+    }
+    50% {
+        top: 60%; left: 40%;
+        transform: translateX(400px) scaleX(-1);  /* Di chuyển sang phải thêm 300px và lật hình ảnh */
+    }
+    75% {
+        top: 20%; left: 50%;
+        transform: translateX(300px) scaleX(-1) rotateZ(-25deg);
+    }
+    85%{
+        top: 0; left: 30%;
+        transform: translateX(-300px) rotateZ(0deg) scaleX(-1);
+    }
+    100% {
+        top: 0; left: 0;
+        transform: translateX(-2%) scaleX(1) ;  /* Quay lại vị trí ban đầu và không lật nữa */
+    }
+}
+@keyframes lan {
+    0% {
+        transform: translateX(0) translateY(0) scaleX(1); /* Bắt đầu ở góc trên trái */
+    }
+    25% {
+        transform: translateX(800px) translateY(200px) scaleX(1); /* Di chuyển gần góc trên phải */
+    }
+    50% {
+        transform: translateX(600px) translateY(270px) scaleX(-1); /* Di chuyển gần dưới phải */
+    }
+    75% {
+        transform: translateX(100px) translateY(280px) scaleX(-1); /* Di chuyển gần dưới trái */
+    }
+    100% {
+        transform: translateX(0) translateY(0) scaleX(1); /* Quay lại vị trí ban đầu */
+    }
+}
+@keyframes swim{
+    0% {
+        transform: translateX(0) rotateY(0deg);
+    }
+    50% {
+        top: 50%; right: 30%;
+        transform: translateX(200px) rotateY(0deg);
+    }
+    50.01%{
+        top: 50%; right: 30%;
+        transform: translateX(300px) rotateY(180deg);
+    }
+    75%{
+        top: 0; right: 0;
+        transform: translateX(-200px) rotateY(180deg);
+    }
+    100% {
+        transform: translateX(0) rotateY(180deg);
+    }
+  }
+@keyframes swim1{
+    0% {
+        transform: translateX(0) rotateY(0deg); /* Bắt đầu tại vị trí gốc và không xoay */
+    }
+    25% {
+        transform: translateX(800px) rotateY(0deg); /* Di chuyển sang phải mà không xoay */
+    }
+    50% {
+        transform: translateX(800px) rotateY(180deg); /* Di chuyển về giữa và xoay 180 độ */
+    }
+    75% {
+        transform: translateX(-300px) rotateY(180deg); /* Di chuyển thêm và vẫn xoay 180 độ */
+    }
+    100% {
+        transform: translateX(0) ;
+    }
+}
